@@ -27,5 +27,5 @@ whose name contains the search string.
 ---
 
 ### How to run 
-`docker pull alinaoryshak/rick-and-morty-app` - pull the image
-`docker run rick-and-morty-app` - run the image
++ `docker pull alinaoryshak/rick-and-morty-app` - pull the image
++ `docker run rick-and-morty-app` - run the image
