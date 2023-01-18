@@ -10,8 +10,8 @@ import com.example.rickandmortyapp.repository.MovieCharacterRepository;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
-import java.util.stream.Collectors;
 
+import com.example.rickandmortyapp.service.impl.MovieCharacterServiceImpl;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;

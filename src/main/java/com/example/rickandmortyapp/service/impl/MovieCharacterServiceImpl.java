@@ -1,10 +1,12 @@
-package com.example.rickandmortyapp.service;
+package com.example.rickandmortyapp.service.impl;
 
 import com.example.rickandmortyapp.dto.external.ApiMovieCharacterDto;
 import com.example.rickandmortyapp.dto.external.ApiResponseDto;
 import com.example.rickandmortyapp.dto.mapper.MovieCharacterMapper;
 import com.example.rickandmortyapp.model.MovieCharacter;
 import com.example.rickandmortyapp.repository.MovieCharacterRepository;
+import com.example.rickandmortyapp.service.HttpClient;
+import com.example.rickandmortyapp.service.MovieCharacterService;
 import jakarta.annotation.PostConstruct;
 import java.util.Arrays;
 import java.util.List;
@@ -61,7 +63,7 @@ public class MovieCharacterServiceImpl implements MovieCharacterService {
         return movieCharacterRepository.findAllByNameContains(namePart);
     }
 
-    List<MovieCharacter> updateInternalDB(ApiMovieCharacterDto[] characterDtos) {
+    public List<MovieCharacter> updateInternalDB(ApiMovieCharacterDto[] characterDtos) {
         Map<Long, ApiMovieCharacterDto> externalIdsAndDtos = Arrays.stream(characterDtos)
                 .collect(Collectors.toMap(ApiMovieCharacterDto::getId, Function.identity()));
         Set<Long> externalIds = externalIdsAndDtos.keySet();
